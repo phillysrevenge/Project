@@ -567,10 +567,14 @@
   /* End Header */
   /* Hero */
   .hero {
-    background-image: url("https://cdn.sstatic.net/Img/home/illo-hero-full.svg?v=e2018a5f9272");
+    background-image: url("https://www.fosterandpartners.com/media/2632593/hero_0804_fp388285.jpg?width=1920&quality=85");
+    /*https://cdn.sstatic.net/Img/home/illo-hero-fulffl.svg?v=e2018a5f9272 */
+    
+    
+    
     background-repeat: no-repeat;
     background-position: top center;
-    background-color: #FFCF10;
+    background-color: gray;
     height: 80vh;
     display: flex;
     justify-content: center;
@@ -1172,7 +1176,7 @@
   /* End Questions */
   /* Jobs */
   .jobs {
-    background-color: var(--powder-100);
+    background-color: var(--dark-blue);
     padding: 10rem 0;
   }
   
