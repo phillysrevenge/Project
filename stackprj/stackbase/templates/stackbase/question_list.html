@@ -90,7 +90,7 @@
         <button class="btn" id="logout-btn">
           <a
             id="fa"
-            href="{% url 'stackbase:question-create'%}"
+            href="{% url 'stackbase:question-create' %}"
             style="color: white; text-decoration: none"
             >Ask Question</a
           >
@@ -125,7 +125,9 @@
             <div id="title-sec" style="display: flex; align-items: center">
               <!-- <a href="{% url 'profile' %}"><img src="{{ request.user.profile.image.url }}" style="width: 50px;"></a></img> -->
               <h3 id="fh3">
-                <a href="">{{ question.title }}</a>
+                <a href="{% url 'stackbase:question-detail' question.id %}"
+                  >{{ question.title }}</a
+                >
               </h3>
             </div>
             <hr />
@@ -134,7 +136,9 @@
             {% else %}
             <h6 id="fh6" style="text-align: left">
               {{ question.content|truncatewords:10}}
-              <a href="">Read More</a>
+              <a href="{% url 'stackbase:question-detail' question.id %}"
+                >Read More</a
+              >
             </h6>
             {% endif %}
             <h6
