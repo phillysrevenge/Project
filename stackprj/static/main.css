@@ -746,7 +746,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    background-color: var(--dark-blue);
+    background-color: #d0bed9;
     padding: 12rem 0;
   }
   .teams .options {
@@ -1176,7 +1176,7 @@
   /* End Questions */
   /* Jobs */
   .jobs {
-    background-color: var(--dark-blue);
+    background-color: #d0bed9;
     padding: 10rem 0;
   }
   
@@ -1236,7 +1236,7 @@
   /* Footer */
   .footer {
     background-color: var(--black-800);
-    color: var(--black-500);
+    color: #1f1f1f;
     padding-top: 4rem;
     padding-bottom: 4rem;
     position: relative;
@@ -1642,6 +1642,8 @@
   /* End Media Queries */
   
   /*# sourceMappingURL=main.css.map */
-  
+  .test {
+    
+  }
 
   
