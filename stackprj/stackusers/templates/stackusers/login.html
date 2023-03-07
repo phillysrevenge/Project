@@ -301,7 +301,7 @@
       <div id="formContent">
         <!-- Tabs Titles -->
         <h2 class="active">
-          <a href="" style="text-decoration: none">Sign In</a>
+          <a href="" style="text-decoration: none; color: #712177">Sign In</a>
         </h2>
         <h2 class="inactive underlineHover">
           <a href="{% url 'register' %}" style="text-decoration: none"
@@ -322,14 +322,24 @@
 
         <form action="" method="POST">
           {% csrf_token %} {{form|crispy}}
-          <input type="submit" class="fadeIn fourth" value="Sign In" />
+          <input
+            type="submit"
+            class="fadeIn fourth"
+            style="background-color: #712177"
+            value="Sign In"
+          />
         </form>
 
         <!-- Remind Passowrd -->
         <div id="formFooter">
           <p>
             Don't have an account yet?
-            <a class="underlineHover" href="{% url 'register' %}">Register </a>
+            <a
+              class="underlineHover"
+              style="color: #712177"
+              href="{% url 'register' %}"
+              >Register
+            </a>
           </p>
         </div>
       </div>

@@ -26,6 +26,7 @@ def profile(request):
     return render(request, 'stackusers/profile.html')
 
 
+@login_required
 def profile_update(request):
     if request.method == "POST":
         u_form = UserUpdateForm(request.POST, instance=request.user)

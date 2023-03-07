@@ -174,7 +174,7 @@
   
   a {
     text-decoration: none;
-    color: var(--blue-600);
+    color: #712177;
     cursor: pointer;
   }
   
@@ -198,7 +198,7 @@
   }
   
   .btn-dark-blue {
-    background-color: var(--dark-blue);
+    background-color: #712177;
     color: var(--white);
   }
   
@@ -446,6 +446,9 @@
     display: none;
     margin-right: 1rem;
   }
+  .fourth{
+    cursor: pointer;
+  }
   .search-btn i {
     font-size: 1.7rem;
     color: var(--black-700);
@@ -546,12 +549,12 @@
   
   .btn-login {
     background-color: var(--powder);
-    color: var(--blue-700);
+    color: #712177;
     border: 1px solid var(--blue-300);
     padding: 0.8rem 1rem;
   }
   .btn-login:hover {
-    background-color: var(--blue-200);
+    background-color: #712177;
   }
   
   .btn-register {
@@ -1642,8 +1645,6 @@
   /* End Media Queries */
   
   /*# sourceMappingURL=main.css.map */
-  .test {
-    
-  }
+  
 
   

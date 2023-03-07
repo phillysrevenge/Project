@@ -28,7 +28,7 @@ class QuestionDetailView(DetailView):
     context_object_name = 'question'
 
 
-class QuestionCreateView(CreateView):
+class QuestionCreateView(LoginRequiredMixin, CreateView):
     model = Question
     fields = ['title', 'content']
 
@@ -37,7 +37,7 @@ class QuestionCreateView(CreateView):
         return super().form_valid(form)
 
 
-class QuestionUpdateView(UserPassesTestMixin, UpdateView):
+class QuestionUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     model = Question
     fields = ['title', 'content']
 
@@ -52,7 +52,7 @@ class QuestionUpdateView(UserPassesTestMixin, UpdateView):
     #     return super().form_valid(form)
 
 
-class QuestionDeleteView(UserPassesTestMixin, DeleteView):
+class QuestionDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
     model = Question
     # redirects to the questions page after deleting
     success_url = reverse_lazy('stackbase:question-list')
