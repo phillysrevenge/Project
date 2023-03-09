@@ -117,17 +117,21 @@
                         </form>
                     <br>
                     <h2>Answers...</h2> <br><br><br>
-
-                    {% if not question.comment.all %}
-                        <h3>No Answers yet... <a href="">Answer Question</a> </h3>
+                    {% csrf_token %}
+                    {% if user.is_authenticated %}
+                        {% if not question.answer.all %}
+                            <h3>No Answers yet... <a href="{% url 'stackbase:question-answer' question.id %}">Answer Question</a> </h3>
+                        {% else %}
+                        {% comment %} #get the related name {% endcomment %}
+                            {% for comment in question.answer.all %} 
+                                <h3 style="font-weight: normal; font-size: 15px;">{{comment.content|safe}}</h3>
+                                <h3 style="font-size: 10px;">Answered by: <i><a href="">{{comment.name}}</a> - On: {{comment.date_created|date:"j F, Y"}}</i></h3>
+                                <hr>  
+                            {% endfor %}
+                        {% endif %}
                     {% else %}
-                        {% for comment in question.comment.all %}
-                            <h3 style="font-weight: normal; font-size: 15px;">{{comment.content|safe}}</h3>
-                            <h3 style="font-size: 10px;">Answered by: <i><a href="">{{comment.name}}</a> - On: {{comment.date_created|date:"j F, Y"}}</i></h3>
-                            <hr>  
-                        {% endfor %}
+                        <h5 style="margin-left: 10px; cursor: pointer;"><a href="{% url 'login' %}">Login</a> to View Answers :) </h5>
                     {% endif %}
-
 
 
                     <!-- {% if not questions.comments.all %}
@@ -160,7 +164,7 @@
                         {% endif %}
                     </form> -->
                     
-                    <a class="btn btn-outline-primary" id="fa" href="" style="text-decoration: none;">Answer Question</a>
+                    <a class="btn btn-outline-primary" id="fa" href="{% url 'stackbase:question-answer' question.id %}" style="text-decoration: none;">Answer Question</a>
                     <a style="text-decoration: none; " class="btn btn-outline-success" href="{% url 'stackbase:question-update' question.id %}">&#x270E;</a>
                     <a style="text-decoration: none; " class="btn btn-outline-danger" href="{% url 'stackbase:question-delete' question.id %}">&#x2716;</a>
                     <a style="text-decoration: none; " class="btn btn-outline-secondary" href="{% url 'stackbase:question-list' %}">&#x21a9;</a>

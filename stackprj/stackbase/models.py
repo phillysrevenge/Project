@@ -17,3 +17,21 @@ class Question(models.Model):
     def get_absolute_url(self):
         # kwargs helps us return to the specific index of the question
         return reverse('stackbase:question-detail', kwargs={'pk': self.pk})
+
+
+class Answer(models.Model):
+    question = models.ForeignKey(
+        Question, related_name="answer", on_delete=models.CASCADE)
+    name = models.CharField(max_length=500)
+    content = models.TextField(null=True, blank=True)
+    date_created = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return '%s - %s' % (self.question.title, self.question.user)
+
+    def get_absolute_url(self):
+        # kwargs helps us return to the specific index of the question
+        return reverse('stackbase:question-detail', kwargs={'pk': self.pk})
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)

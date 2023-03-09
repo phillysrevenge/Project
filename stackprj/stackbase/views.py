@@ -3,7 +3,8 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 # userpasses test throws an error if the testfunc method returns false
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.urls import reverse_lazy
-from .models import Question
+from .models import Question, Answer
+from .forms import AnswerForm
 # Create your views here.
 
 
@@ -63,3 +64,25 @@ class QuestionDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
             return True
         else:
             return False
+
+
+class AnswerDetailView(CreateView):
+    model = Answer
+    form_class = AnswerForm
+    template_name = 'stackbase:question-detail.html'
+
+    def form_valid(self, form):
+        form.instance.question_id = self.kwargs['pk']
+        return super().form_valid(form)
+    success_url = reverse_lazy('stackbase:question-detail')
+
+
+class AddAnswerView(CreateView):
+    model = Answer
+    form_class = AnswerForm
+    template_name = 'stackbase/question-answer.html'
+
+    def form_valid(self, form):
+        form.instance.question_id = self.kwargs['pk']
+        return super().form_valid(form)
+    success_url = reverse_lazy('stackbase:question-list')
