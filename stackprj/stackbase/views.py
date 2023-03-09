@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.http import HttpResponseRedirect
 # userpasses test throws an error if the testfunc method returns false
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from .models import Question, Answer
 from .forms import AnswerForm
 # Create your views here.
@@ -18,6 +19,19 @@ def about(request):
 # Crud
 
 
+def like_view(request, pk):
+    post = get_object_or_404(Question, id=request.POST.get('question_id'))
+    liked = False
+    if post.likes.filter(id=request.user.id).exists():
+        # if the user has liked the post, remove the like button
+        post.likes.remove(request.user)
+        liked = False
+    else:
+        post.likes.add(request.user)
+        liked = True
+    return HttpResponseRedirect(reverse('stackbase:question-detail', args=[str(pk)]))
+
+
 class QuestionListView(ListView):
     model = Question
     context_object_name = 'questions'
@@ -27,6 +41,19 @@ class QuestionListView(ListView):
 class QuestionDetailView(DetailView):
     model = Question
     context_object_name = 'question'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(QuestionDetailView, self).get_context_data()
+        name = get_object_or_404(Question, id=self.kwargs['pk'])
+        likes_count = name.likes_count()
+        liked = False
+
+        if name.likes.filter(id=self.request.user.id).exists():
+            liked = True
+
+        context['likes_count'] = likes_count
+        context['liked'] = liked
+        return context
 
 
 class QuestionCreateView(LoginRequiredMixin, CreateView):

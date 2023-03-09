@@ -10,6 +10,7 @@ class Question(models.Model):
     title = models.CharField(max_length=10000)
     content = models.TextField(null=True, blank=True)
     date_created = models.DateTimeField(default=timezone.now)
+    likes = models.ManyToManyField(User, related_name='likes')
 
     def __str__(self):
         return f'{self.user.username} - Question'
@@ -17,6 +18,9 @@ class Question(models.Model):
     def get_absolute_url(self):
         # kwargs helps us return to the specific index of the question
         return reverse('stackbase:question-detail', kwargs={'pk': self.pk})
+
+    def likes_count(self):
+        return self.likes.count()
 
 
 class Answer(models.Model):
