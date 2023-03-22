@@ -2,13 +2,15 @@ from django.db import models
 from django.utils import timezone
 from django.urls import reverse
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 
 class Question(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=10000)
-    content = models.TextField(null=True, blank=True)
+    # content = models.TextField(null=True, blank=True)
+    content = RichTextField()
     date_created = models.DateTimeField(default=timezone.now)
     likes = models.ManyToManyField(User, related_name='likes')
 
@@ -27,7 +29,8 @@ class Answer(models.Model):
     question = models.ForeignKey(
         Question, related_name="answer", on_delete=models.CASCADE)
     name = models.CharField(max_length=500)
-    content = models.TextField(null=True, blank=True)
+    # content = models.TextField(null=True, blank=True)
+    content = RichTextField()
     date_created = models.DateTimeField(default=timezone.now)
 
     def __str__(self):

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'stackbase',
     'stackusers',
     'crispy_forms',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [

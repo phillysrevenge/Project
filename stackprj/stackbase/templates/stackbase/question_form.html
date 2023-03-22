@@ -179,6 +179,7 @@
                                         <form action="" method="POST" enctype="multipart/form-data">
                                             {% csrf_token %}
                                             {{form|crispy}}
+                                            {{ form.media }}
                                                 <button class="btn test" style = "background-color: #690073; color: white;" id="logout-btn" type="submit">Post Question</button>
                                                 <a style="text-decoration: block; background-color: #690073; color: white; " class="btn btn-outline-secondary" href="{% url 'stackbase:question-list' %}">Cancel</a>
                                                 <!-- <button class="btn btn-secondary" id="logout-btn" type="submit"><a id="fa" href="" style="color: white; text-decoration: none;">Go back</a></button> -->
