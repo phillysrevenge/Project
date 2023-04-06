@@ -54,7 +54,7 @@
           from(#f29263),
           to(#ee5a6f)
         );
-        background: linear-gradient(to right, rgb(255, 208, 0), orange);
+        background: rgb(208, 190, 217);
       }
 
       .user-profile {
@@ -186,7 +186,7 @@
                       class="mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"
                     ></i>
                     <div style="margin-top: 10px">
-                      <button class="btn btn-primary" id="logout-btn">
+                      <button class="btn btn-dark-blue" id="logout-btn">
                         <a
                           id="fa"
                           href="{% url 'profile_update' %}"
@@ -221,22 +221,22 @@
                     </h6>
                     <div class="row">
                       <div class="col-sm-6">
-                        <p class="m-b-10 f-w-600">Recent</p>
+                        <p class="m-b-10 f-w-600">Department</p>
                         <h6 class="text-muted f-w-400">
-                          <a href="#">Project1</a>
+                          <a href="#">School of Computing</a>
                         </h6>
                       </div>
                       <div class="col-sm-6">
-                        <p class="m-b-10 f-w-600">Most Viewed</p>
+                        <p class="m-b-10 f-w-600">Course</p>
                         <h6 class="text-muted f-w-400">
-                          <a href="#">Project2</a>
+                          <a href="#">IT with Cybersecurity</a>
                         </h6>
                       </div>
                       <div style="margin-top: 55px">
-                        <button class="btn btn-secondary" id="logout-btn">
+                        <button class="btn btn-dark-blue" id="logout-btn">
                           <a
                             id="fa"
-                            href=""
+                            href="{% url 'stackbase:question-create' %}"
                             style="color: white; text-decoration: none"
                             >Ask Question</a
                           >

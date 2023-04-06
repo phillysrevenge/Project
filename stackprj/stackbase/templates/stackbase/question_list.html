@@ -87,7 +87,7 @@
       <div id="sub-nav">
         <h1 id="fh1">Top Questions</h1>
         {% if user.is_authenticated %}
-        <button class="btn" id="logout-btn">
+        <button class="btn btn-dark-blue">
           <a
             id="fa"
             href="{% url 'stackbase:question-create' %}"
@@ -96,7 +96,7 @@
           >
         </button>
         {% else %}
-        <button class="btn" id="logout-btn">
+        <button class="btn-btn-darkblue" id="logout-btn">
           <a
             id="fa"
             href="{% url 'login' %}"
@@ -115,7 +115,7 @@
               background: linear-gradient(
                 to right,
                 rgba(255, 255, 255, 0.22),
-                rgba(201, 255, 255, 0.22)
+                rgba(255, 255, 255, 0.22)
               );
               padding: 5px;
               box-shadow: rgba(0, 0, 0, 0.383) 0px 5px 5px 0px;
@@ -125,7 +125,9 @@
             <div id="title-sec" style="display: flex; align-items: center">
               <!-- <a href="{% url 'profile' %}"><img src="{{ request.user.profile.image.url }}" style="width: 50px;"></a></img> -->
               <h3 id="fh3">
-                <a href="{% url 'stackbase:question-detail' question.id %}"
+                <a
+                  href="{% url 'stackbase:question-detail' question.id %}"
+                  style="color: purple"
                   >{{ question.title }}</a
                 >
               </h3>
@@ -136,7 +138,9 @@
             {% else %}
             <h6 id="fh6" style="text-align: left">
               {{ question.content|truncatewords:10}}
-              <a href="{% url 'stackbase:question-detail' question.id %}"
+              <a
+                href="{% url 'stackbase:question-detail' question.id %}"
+                style="color: purple"
                 >Read More</a
               >
             </h6>
@@ -150,7 +154,8 @@
               "
             >
               Asked By:
-              <a href="{% url 'profile' %}">{{ question.user }}</a
+              <a href="{% url 'profile' %}" style="color: purple"
+                >{{ question.user }}</a
               >&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; On:
               {{question.date_created|date:"j F, Y"}}
             </h6>

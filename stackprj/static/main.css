@@ -570,7 +570,7 @@
   /* End Header */
   /* Hero */
   .hero {
-    background-image: url("https://www.fosterandpartners.com/media/2632593/hero_0804_fp388285.jpg?width=1920&quality=85");
+    background-image: url("https://d1kvkzjpuym02z.cloudfront.net/5dc1fbc2c0ecce0829a0877d.jpg?Expires=2047829188&Signature=JDx20x-OvJAWxBy5kYu9HHNHiWEhch~4uJSk4143eDQCMF-J3cTtmCR8RvotqZVmwzwxRFjNHw3yCkrdK-EQ5amNNwQmj78xO-PZyqRUYuEJNPwJVqec4YG0RJa-Q2-REebycn0nLN9gi4vb4GQdEN7ffYGiXnKO3abpCI95ChA_&Key-Pair-Id=APKAJXYWFXCDTRLR3EFA");
     /*https://cdn.sstatic.net/Img/home/illo-hero-fulffl.svg?v=e2018a5f9272 */
     
     
@@ -608,9 +608,9 @@
   .hero-paragraph {
     margin: 2rem 0;
     font-size: 2rem;
-    color: var(--black-800);
+    color: white;
     max-width: 40rem;
-    font-weight: 400;
+    font-weight: bold;
     text-align: center;
     font-family: "Source Sans Pro", sans-serif;
   }
@@ -652,7 +652,7 @@
     height: 8px;
     margin: 3rem auto;
     border-radius: 100rem;
-    background-color: var(--orange-400);
+    background-color: var(--dark-blue);
   }
   
   .section-description {

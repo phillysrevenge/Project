@@ -28,7 +28,15 @@ urlpatterns = [
     path('logout/', auth_view.LogoutView.as_view(template_name="stackusers/logout.html"), name="logout"),
 
     path('profile/', user_view.profile, name="profile"),
-    path('profile/update/', user_view.profile_update, name="profile_update")
+    path('profile/update/', user_view.profile_update, name="profile_update"),
+    path('reset_password_sent/', auth_view.PasswordResetDoneView.as_view(),
+         name="password_reset_done"),
+    path('reset_password/',
+         auth_view.PasswordResetView.as_view(), name="reset_password"),
+    path('reset/<uidb64>/<token>/', auth_view.PasswordResetConfirmView.as_view(),
+         name="password_reset_confirm"),
+    path('reset_password_complete/', auth_view.PasswordResetCompleteView.as_view(),
+         name="password_reset_complete")
 ]
 
 if settings.DEBUG:

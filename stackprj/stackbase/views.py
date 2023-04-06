@@ -37,8 +37,17 @@ class QuestionListView(ListView):
     context_object_name = 'questions'
     ordering = ['-date_created']
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        search_word = self.request.GET.get('search-area') or ""
+        if search_word:
+            context['questions'] = context['questions'].filter(
+                title__icontains=search_word)
+            context['search_input'] = search_word
+        return context
 
-class QuestionDetailView(DetailView):
+
+class QuestionDetailView(LoginRequiredMixin, DetailView):
     model = Question
     context_object_name = 'question'
 

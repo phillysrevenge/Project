@@ -131,3 +131,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'stackbase:home'
 LOGIN_URL = 'login'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# # EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = '2120933socproject@gmail.com'
+# EMAIL_HOST_PASSWORD = 'soctest1999$'
+
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '6678e2fd3c9143'
+EMAIL_HOST_PASSWORD = 'd7eb8305786ddd'
+EMAIL_PORT = '2525'
