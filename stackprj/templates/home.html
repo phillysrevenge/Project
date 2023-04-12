@@ -7,19 +7,24 @@
       that enable productivity, growth, and discovery.
     </p>
     <div class="hero-options">
-      <a href="https://chat.openai.com/chat#" class="btn btn-developers"
+      <a
+        href="https://chat.openai.com/chat#"
+        class="btn btn-developers"
+        target="_blank"
         >ChatGPT</a
       >
       <a
         href="https://www.rgu.ac.uk/study/academic-schools/school-of-computing"
         class="btn btn-developers"
         style="margin-left: 5px"
+        target="_blank"
         >School Of Computing</a
       >
       <a
         href="{% url 'stackbase:question-list' %}"
         class="btn btn-developers"
         style="margin-left: 5px"
+        target="_blank"
         >Latest Questions</a
       >
     </div>
@@ -47,12 +52,15 @@
         </div>
         <div class="option-title">Public Q&A</div>
         <div class="option-description">
-          Get answers to more than 16.5 million questions and give back by
-          sharing your knowledge with others.
-          <a href="#">Sign up</a> for an account.
+          Get answers to your questions and give back by sharing your knowledge
+          with others.
+          <a href="{% url 'register' %}">Sign up</a> for an account.
         </div>
         <div class="option-button">
-          <a href="#" class="option-link btn btn-dark-blue">
+          <a
+            href="{% url 'stackbase:question-list' %}"
+            class="option-link btn btn-dark-blue"
+          >
             Browse questions
           </a>
         </div>
@@ -64,13 +72,20 @@
             alt="Private Q & A"
           />
         </div>
-        <div class="option-title">Public Q&A</div>
+        <div class="option-title">Learn and Upskill</div>
         <div class="option-description">
-          Level up with Stack Overflow while you work. Share knowledge privately
-          with your coworkers using our flagship Q&A engine.
+          Level up with courses while you study. W3 schools is a platform you
+          can learn multiple programming languages to become a better developer
+          and student.
         </div>
         <div class="option-button">
-          <a href="#" class="option-link btn btn-dark-blue"> Try for free </a>
+          <a
+            href="https://www.w3schools.com/"
+            class="option-link btn btn-dark-blue"
+            target="_blank"
+          >
+            Try W3 Schools
+          </a>
         </div>
       </div>
       <div class="option">
@@ -81,13 +96,20 @@
 "
           />
         </div>
-        <div class="option-title">Public Q&A</div>
+        <div class="option-title">Latest Tech News</div>
         <div class="option-description">
-          Find the right job through high quality listings and search for roles
-          based on title, technology stack, salary, location, and more.
+          Stay up to date on the latest tech news and developments in the
+          industry. See what some of the largest companies are up to and new
+          innovations!
         </div>
         <div class="option-button">
-          <a href="#" class="option-link btn btn-dark-blue"> Find a job </a>
+          <a
+            href="https://techcrunch.com/?guccounter=1"
+            class="option-link btn btn-dark-blue"
+            target="_blank"
+          >
+            Click Me
+          </a>
         </div>
       </div>
     </div>
@@ -97,13 +119,12 @@
 <section class="for-businesses">
   <div class="container">
     <div class="section-head">
-      <h2 class="section-title">For businesses, by developers</h2>
+      <h2 class="section-title">For SOC, by students</h2>
       <div class="section-line"></div>
       <p class="section-description">
-        Our mission is to help developers write the script of the future. This
-        means helping you find and hire skilled developers for your business and
-        providing them the tools they need to share knowledge and work
-        effectively.
+        Our mission is to help students write the script of the future. This
+        means helping you gain relevant knowledge and providing you the tools
+        they need to share knowledge and collaborate effectively.
       </p>
     </div>
 
@@ -116,8 +137,9 @@
           />
         </div>
         <div class="option-description">
-          Quickly find and share internal knowledge with
-          <a href="#" class="option-link">Private Q&A</a>
+          Host your own paid tutorials!. Feature will be rolled out in next
+          release. Watchout!
+          <a href="#" class="option-link">Be notified</a>
         </div>
       </div>
       <div class="option">
@@ -128,8 +150,10 @@
           />
         </div>
         <div class="option-description">
-          Find the perfect candidate for your growing technical team with
-          <a href="#" class="option-link">Talent solutions</a>
+          Quickly find and share internal knowledge with
+          <a href="{% url 'stackbase:question-list' %}" class="option-link"
+            >Private Q&A</a
+          >
         </div>
       </div>
       <div class="option">
@@ -140,8 +164,8 @@
           />
         </div>
         <div class="option-description">
-          Accelerate the discovery of your products or services through our
-          <a href="#" class="option-link">Advertising platform</a>
+          Accelerate the discovery of new information for SOC
+          <a href="https://www.rgu.ac.uk/" class="option-link">RGU </a>students
         </div>
       </div>
     </div>
@@ -151,13 +175,11 @@
 <section class="teams">
   <div class="container">
     <div class="teams-head">
-      <h2 class="teams-title">
-        Unlock siloed knowledge with Stack Overflow for Teams
-      </h2>
+      <h2 class="teams-title">Unlock all features with SOC Ask</h2>
       <p class="teams-description">
-        Wikis, chat messages, or formal documentation for knowledge management
-        aren’t effective. Our question and answer format is a proven approach
-        for accessing the right information in less time.
+        Learn, collaborate, Tutorials, badge, ask and answer questions. Our
+        question and answer format is a proven approach for accessing the right
+        information in less time.
       </p>
       <div class="teams-details">
         <a href="#" class="btn btn-dark-blue">Learn More</a>
@@ -172,8 +194,8 @@
         </div>
         <div class="card-body">
           <div class="plan-price">
-            <div class="price">$6 USD</div>
-            <span class="per">per teammate / month</span>
+            <div class="price">Free</div>
+            <span class="per">Available to all SOC students</span>
           </div>
           <div class="plan-features">
             <div class="plan-feature">
@@ -182,13 +204,13 @@
             </div>
             <div class="plan-feature">
               <i class="fab fa-keycdn"></i>
-              <span class="plan-text"
-                >Your own private space hosted on stackoverflow.com</span
-              >
+              <span class="plan-text">Ask and answer questions</span>
             </div>
             <div class="plan-feature">
               <i class="fas fa-archive"></i>
-              <span class="plan-text">Fully searchable archive</span>
+              <span class="plan-text"
+                >Fully searchable archive of questions</span
+              >
             </div>
           </div>
         </div>
@@ -203,15 +225,15 @@
           <i class="fas fa-city"></i>
         </div>
         <div class="card-header">
-          <h2 class="plan-type">Business</h2>
+          <h2 class="plan-type">SOC Pro</h2>
           <p class="plan-description">
-            Private knowledge base with SSO and premium features
+            Access to past tutorial videos on various subjects
           </p>
         </div>
         <div class="card-body">
           <div class="plan-price">
-            <div class="price">$12 USD</div>
-            <span class="per">per teammate / month</span>
+            <div class="price">$4 USD</div>
+            <span class="per">monthly subscription</span>
           </div>
           <div class="plan-features">
             <div class="plan-feature">
@@ -220,7 +242,7 @@
             </div>
             <div class="plan-feature">
               <i class="far fa-chart-bar"></i>
-              <span class="plan-text">Reporting and analytics</span>
+              <span class="plan-text">Early Access to new features</span>
             </div>
             <div class="plan-feature">
               <i class="fas fa-plus-square"></i>
@@ -243,38 +265,36 @@
 
       <div class="card card-enterprise">
         <div class="card-header">
-          <h2 class="plan-type">Enterprise</h2>
+          <h2 class="plan-type">Creator</h2>
           <p class="plan-description">
-            Standalone knowledge base with enhanced security and flexible
-            hosting
+            Access to host paid tutorial sessions for students, creator badge,
+            and increased priviledges.
           </p>
         </div>
         <div class="card-body">
           <div class="plan-price">
-            <div class="price">Custom pricing</div>
-            <span class="per">Let’s talk about what you need</span>
+            <div class="price">$10 USD</div>
+            <span class="per">monthly subscription</span>
           </div>
           <div class="plan-features">
             <div class="plan-feature">
               <i class="fas fa-key"></i>
-              <span class="plan-text">Single sign-on with AD or SAML</span>
+              <span class="plan-text">Host paid tutorials</span>
             </div>
             <div class="plan-feature">
               <i class="fas fa-mountain"></i>
               <span class="plan-text"
-                >Host on your cloud or servers – or our private managed
-                cloud</span
-              >
+                >Access to creator badge for ease of recognition
+              </span>
             </div>
             <div class="plan-feature">
               <i class="fas fa-code"></i>
-              <span class="plan-text">Robust read and write API</span>
+              <span class="plan-text">Early access to new features</span>
             </div>
             <div class="plan-feature">
               <i class="fas fa-user"></i>
               <span class="plan-text"
-                >Your own customer success and community building
-                representative</span
+                >Your own product and we only get 15%</span
               >
             </div>
             <div class="plan-feature">
@@ -330,13 +350,13 @@
           alt=""
           class="hire-icon"
         />
-        <h4 class="hire-item-title">Hire your technical talent</h4>
+        <h4 class="hire-item-title">Get Answers to questions</h4>
         <p class="hire-item-description">
-          We help expand your technical hiring strategy to promote your employer
-          brand and highlight relevant open roles to our community of over 100
-          million developers and technologists.
+          Increased expertise and better grades, everybody wins. We can also
+          connect employers to highle reputable and technically astute community
+          members
         </p>
-        <a href="#" class="btn btn-dark-blue">Stack Overflow Talent</a>
+        <a href="#" class="btn btn-dark-blue">SOC Ask Talent</a>
       </div>
       <div class="hire-item">
         <img
@@ -344,13 +364,13 @@
           alt=""
           class="hire-icon"
         />
-        <h4 class="hire-item-title">Reach developers worldwide</h4>
+        <h4 class="hire-item-title">SOC Learn</h4>
         <p class="hire-item-description">
-          Use the world’s largest resource for people who code to help you
-          increase awareness and showcase your product or service across Stack
-          Overflow’s network of Q&A sites.
+          Use the world’s RGU's largest resource for SOC students to help you
+          increase awareness and showcase your techical knowledge across a
+          variety of subjects. You can organize paid tutorials
         </p>
-        <a href="#" class="btn btn-dark-blue">Stack Overflow Advertising</a>
+        <a href="#" class="btn btn-dark-blue">SOC Ask Learning</a>
       </div>
     </div>
   </div>
@@ -404,7 +424,9 @@
             Accept the answer which solved your problem to let others benefit
             from the valuable information.
           </h4>
-          <a href="#" class="btn btn-dark-blue question-item-content-btn"
+          <a
+            href="{% url 'register' %}"
+            class="btn btn-dark-blue question-item-content-btn"
             >Create an account</a
           >
         </div>
@@ -478,8 +500,8 @@
             </div>
             <h4 class="grid-item-title">Acquire and share knowledge</h4>
             <p class="grid-item-description">
-              Answer questions and <a href="#">gain insights</a> from an
-              audience of developers using your technology on Stack Overflow.
+              Answer questions and gain insights from other students using your
+              technology on SOC Ask.
             </p>
           </div>
           <div class="questions-grid-item">
@@ -489,11 +511,11 @@
                 alt=""
               />
             </div>
-            <h4 class="grid-item-title">Find career opportunities</h4>
+            <h4 class="grid-item-title">Personal Profile</h4>
             <p class="grid-item-description">
               Create a profile that shows off your expertise and credentials to
               help you make your next move. Start your
-              <a href="#">Developer Story</a>.
+              <a href="{% url 'profile' %}">Developer Story</a>.
             </p>
           </div>
         </div>
