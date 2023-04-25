@@ -312,14 +312,6 @@
         <!-- Icon -->
         <div class="fadeIn first"></div>
 
-        <!-- Login Form -->
-        <!-- <form method="POST">
-                {% csrf_token %}
-                <div class="container" p> -->
-        <!-- {{form|crispy}} -->
-        <!-- <input type="submit" class="fadeIn fourth" value="Sign In"> -->
-        <!-- </form> -->
-
         <form action="" method="POST">
           {% csrf_token %} {{form|crispy}}
           <input
@@ -333,12 +325,12 @@
         <!-- Remind Passowrd -->
         <div id="formFooter">
           <p>
-            Don't have an account yet?
+            Forgotten Password?
             <a
               class="underlineHover"
               style="color: #712177"
               href="{% url 'reset_password' %}"
-              >Register
+              >Reset Password
             </a>
           </p>
         </div>

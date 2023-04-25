@@ -10,14 +10,16 @@ from .forms import ProfileUpdateForm, UserUpdateForm
 def register(request):
     if request.method == "POST":
         form = userRegisterForm(request.POST)
+        # append form details filled to the user crestion form
         if form.is_valid():
             form.save()
+            # save form to database
             username = form.cleaned_data.get('username')
             messages.success(
                 request, f'Account created successfully for {username}')
             return redirect('login')
     else:
-        form = userRegisterForm()
+        form = userRegisterForm() 
     return render(request, 'stackusers/register.html', {'form': form})
 
 

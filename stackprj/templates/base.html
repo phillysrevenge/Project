@@ -1,6 +1,7 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
+    {% comment %} things that are common on all pages in the application are here and they just extend this page {% endcomment %}
 <head>
 
     <meta charset="UTF-8">
@@ -8,7 +9,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Stack Overflow - Where Developers Learn, Share, &amp; Build Careers</title>
-    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico?v=ec617d715196">
+    <link rel="shortcut icon" href="https://ddcdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico?v=ec617d715196">
     <link rel="apple-touch-icon" href="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a">
     <link rel="image_src" href="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -58,7 +59,7 @@
             </div>
 
             <a href="" class="nav-icon">
-                <i class="fab fa-stack-overflow"></i>
+                <i class="cab fa-stack-overflow"></i>
                 <a href="{% url 'stackbase:home' %}" style="text-decoration: none; color: black;"><div class="nav-icon-text">SOC <span class="nav-bold-text">Ask</span></a>
                 <!-- <div class="nav-icon-text">stack <span class="nav-bold-text">overflow</span> -->
 
@@ -128,12 +129,13 @@
 
         
 </header>
+{% comment %} all the above are the navs and headers {% endcomment %}
 
 <!-- Add block content here -->
 <!-- Add enbdblock content here -->
 
 {% block content %}
-
+{% comment %} where the pages main content will be, applies for all pages that extend this page {% endcomment %}
 {% endblock content %}
 
 <section class="jobs">

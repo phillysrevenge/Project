@@ -12,6 +12,7 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.user.username} - Profile'
+    # self. the logged in user - profile: e.g philly - Profile
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

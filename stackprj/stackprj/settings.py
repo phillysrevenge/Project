@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+# imported os
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,7 +30,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# installed all the defined apps here
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -58,6 +59,7 @@ ROOT_URLCONF = 'stackprj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        # configure the directory for templates, join with the base directory
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -121,6 +123,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+# join the base directory with the folder named static where all styling will be
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -129,6 +132,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'stackbase:home'
+# when a login attempt is successful, take the user to the homepage
 LOGIN_URL = 'login'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -149,7 +153,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_FROM = '2120933socproject@gmail.com'
 EMAIL_HOST_USER = '2120933socproject@gmail.com'
-EMAIL_HOST_PASSWORD = 'gbkskcuhbsmkrloq'
+EMAIL_HOST_PASSWORD = 'qgtpagxheftuekoc'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
